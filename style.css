@@ -1,0 +1,356 @@
+/* Making the webpage scroll less abruptly */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Setting the background color of the header to black */
+.top {
+    background-color: black;
+}
+
+/* Setting the text properties for the site heading */
+.header {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #A68952;
+    font-size: 60pt;
+    text-align: center;
+    height: 12vh;
+}
+
+/* Adding a color change animation to the site header */
+.child {
+    letter-spacing: 50pt;
+    animation: flash 2s infinite;
+}
+
+
+/* Setting the text color for the nav buttons */
+#aboutButton {
+    color: #A68952;
+}
+#reviewsButton {
+    color: #A68952;
+}
+#tracksButton {
+    color: #A68952;
+}
+#bioButton {
+    color: #A68952;
+}
+#othersButton {
+    color: #A68952;
+}
+
+
+/* Setting font properties for the nav bar */
+.button {
+    font-family: "Futura";
+    background-color: black;
+    border: none;
+    color: #A68952;
+    text-align: center;
+    font-size: 10pt;
+    word-spacing: 130pt;
+    font-stretch: condensed;
+    font-weight: bolder;
+
+}
+
+/* Spacing out nav buttons */
+.navButton {
+    float: left;
+    margin-left: 180px;
+    width: 1fr;
+}
+
+/* Specifying nav bar font style */
+.nav {
+    font-family: "Futura";
+    color: #A68952;
+    font-size: 10pt;
+    word-spacing: 130pt;
+    font-stretch: condensed;
+    font-weight: bolder;
+    width: 100vw;
+    margin-bottom: .5%;
+}
+
+/* Setting up parallax scrolling for the first image */
+.firstScroll{
+    grid-area: firstScroll;
+    padding-top: 600px;
+    padding-bottom: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(./assets/album-cover.png);
+    background-attachment: fixed;
+
+}
+
+/* Modal pop-up styling */
+.modalBox {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: ease-in 400ms opacity;
+    -moz-transition: ease-in 400ms opacity;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+/* Moving the email input box to the center of my modal */
+#email{
+    display: flex;
+    margin-left: 32%;
+}
+
+/* Allowing the link for the modal to be clicked on */
+.modalBox:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Font styling for CURRENT SINGLES and MORE RINA headings */
+h3 {
+    color: #C59F6F;
+    text-decoration-color: black;
+}
+
+/* Styling for modal box itself (background, padding, width) */
+.modalBox > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: black;
+    border: #93713F 2px;
+}
+
+/* Changing color of exiting X within modal */
+.closeBox {
+    color: #93713F;
+}
+
+/* Styling SIGN UP TO BE NOTIFIED heading within modal */
+#modalHeading {
+    color: #A68952;
+    text-align: center;
+}
+
+/* Styling SIGN ME UP button within modal */
+#modalButton {
+    color: black;
+    background-color: #93713F;
+    border-color: #C59F6F solid;
+    text-align: center;
+    width: fit-content;
+    align-self: center;
+    margin-left: 37%;
+}
+
+/* Styling email input box and centering it within the modal */
+#inputBox {
+    background-color: #EEE6CD;
+    color: black;
+    text-align: center;
+    width: 75%;
+    margin-left: 12%;
+}
+
+/* Setting up grid areas for div placements */
+.everythingElse {
+    display: grid;
+    border: #93713F .5px solid;
+    grid-template-areas: "firstScroll firstScroll firstScroll firstScroll firstScroll firstScroll"
+                         "firstScroll firstScroll firstScroll firstScroll firstScroll firstScroll"
+                        "firstScroll firstScroll firstScroll firstScroll firstScroll firstScroll"
+                        "firstScroll firstScroll firstScroll firstScroll firstScroll firstScroll"
+                        "about about about reviews reviews reviews"
+                        "about about about reviews reviews reviews"
+                        "about about about reviews reviews reviews"
+                        "about about about reviews reviews reviews"
+                        "about about about reviews reviews reviews"
+                        "tracks tracks tracks spotify spotify spotify"
+                        "tracks tracks tracks spotify spotify spotify"
+                        "tracks tracks tracks spotify spotify spotify"
+                        "tracks tracks tracks spotify spotify spotify"
+                        "secondScroll secondScroll secondScroll secondScroll secondScroll secondScroll"
+                         "secondScroll secondScroll secondScroll secondScroll secondScroll secondScroll"
+                        "secondScroll secondScroll secondScroll secondScroll secondScroll secondScroll"
+                        "secondScroll secondScroll secondScroll secondScroll secondScroll secondScroll"
+                        "bio bio bio bio bio bio"
+                        "bio bio bio bio bio bio"
+                        "videos videos videos others others others"
+                        "videos videos videos others others others"
+                        "videos videos videos others others others"
+                        "videos videos videos others others others"
+
+}
+
+/* Specifying scroll speed(?) for the full page and adding the black background */
+.wholePage {
+    background-color: black;
+    height: 100vh;
+    overflow-x: visible;
+    overflow-y: auto;
+    perspective: 2px;
+    scroll-behavior: smooth;
+}
+
+/* Font styling and centering for ABOUT section */
+.about {
+    grid-area: about;
+    color: #774E32;
+    font-family: "Futura";
+    font-size: 12pt;
+    font-weight: bold;
+    font-stretch: condensed;
+    text-align: center;
+    border: solid 2px #93713F;
+}
+
+
+
+
+
+/* Joining the border for all table elements and centering the table in its cell */
+.table, td, th {
+    border: #93713F solid;
+    border-collapse: collapse;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+th{
+    color:#C59F6F;
+}
+
+/* Locating and styling review text and adding a border */
+#reviews {
+    grid-area: reviews;
+    color: #774E32;
+    font-family: "Futura";
+    font-stretch: condensed;
+    text-align: center;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px #93713F;
+}
+
+/* Centering and styling review text */
+.reviewText {
+    font-size: 13pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: reviews;
+}
+
+/* Centering TRACKLIST title */
+h2 {
+    margin-left: 8pt;
+    color: #C59F6F;
+}
+
+/* Adding a border to TRACKLIST and SPOTIFY section */
+.listen {
+    border: #93713F solid;
+}
+
+/* Font styling for tracklist */
+.tracks {
+    grid-area: tracks;
+    color: #774E32;
+    font-family: "Futura";
+    font-size: 15pt;
+    font-weight: bold;
+    font-stretch: condensed;
+    text-align: center;
+}
+
+/* Centering embedded spotify playlist in grid cell(s) */
+.spotify {
+    grid-area: spotify;
+    color: #774E32;
+    font-family: "Futura";
+    font-size: 15pt;
+    font-stretch: condensed;
+    text-align: center;
+}
+
+/* Parallax scrolling for second image; keeps it from overflowing into the first image and keeps it behind other divs */
+.secondScroll {
+    grid-area: secondScroll;
+    padding-top: 600px;
+    padding-bottom: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(./assets/sawaresized.jpg);
+    background-attachment: fixed;
+}
+
+/* Font styling for BIO heading */
+.bio {
+    grid-area: bio;
+    border: #93713F 1px solid;
+    color: #774E32;
+    font-family: "Futura";
+    font-size: 15pt;
+    font-stretch: condensed;
+    text-align: center;
+}
+
+/* Changing font size of the bio paragraph */
+.bioText {
+    font-size: 13pt;
+    font-family: "Futura";
+    font-weight: bold;
+}
+
+/* Specifying location and text color for embedded videos, and centering*/
+.videos {
+    grid-area: videos;
+    border: #93713F 1px solid;
+    color: #774E32;
+    font-family: "Futura";
+    font-size: 15pt;
+    font-stretch: condensed;
+    text-align: center;
+}
+
+/* Specifying text color for MORE RINA heading */
+.others {
+    grid-area: others;
+    border: #93713F 1px solid;
+    color: #774E32;
+    font-family: "Futura";
+    font-size: 15pt;
+    font-stretch: condensed;
+    text-align: center;
+}
+
+
+/* Creating an animation to change the colors of the title letters */
+@keyframes flash {
+    0% {
+        color: #A68952;
+    }
+    50% {
+        color: #EEE6CD
+    }
+    100% {
+        color: #A68952;
+    }
+}
+
+/* modal info source: https://youtu.be/KjQ8uvAt9kQ */
